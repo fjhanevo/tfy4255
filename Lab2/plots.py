@@ -100,11 +100,11 @@ if __name__ == "__main__":
     np.random.seed(80085)
     # Parameters
     A_0=2.
-    NUM_ATOMS=100
+    NUM_ATOMS=10
     STEPSIZE=0.001
     EPSILON=1.2
     EPSILON_GLASS = 0.5
-    THERMAL = True
+    THERMAL=True
 
     # Different amplitudes and widths to test
     # amplitude_values_1 = [1.0, 2.0, 3.0]  # Different amplitudes
@@ -136,10 +136,12 @@ if __name__ == "__main__":
             axs[i, 1].plot(freq, intensity, label='Intensity', color='red')
             axs[i, 1].set_xlabel('Frequency [1/Å]')
             axs[i, 1].set_ylabel('Intensity')
+            # Clip axes for better view
+            axs[i, 1].set_xlim(-3,3)
             axs[i, 1].legend()
 
         plt.tight_layout()
-        # plt.savefig('Figures/dia_thermal.png')
+        plt.savefig('Figures/dia_thermal_clipped.png')
         plt.show()
 
 
@@ -160,10 +162,12 @@ if __name__ == "__main__":
             axs[i, 1].plot(freq, intensity, label='Intensity', color='red')
             axs[i, 1].set_xlabel('Frequency [1/Å]')
             axs[i, 1].set_ylabel('Intensity')
+            # Clip axes for better view
+            axs[i, 1].set_xlim(-3,3)
             axs[i, 1].legend()
 
         plt.tight_layout()
-        plt.savefig('Figures/mono_thermal.png')
+        # plt.savefig('Figures/mono_thermal_clipped.png')
         plt.show()
 
     def plot_glass()->None:
@@ -183,10 +187,12 @@ if __name__ == "__main__":
             axs[i, 1].plot(freq, intensity, label='Intensity', color='red')
             axs[i, 1].set_xlabel('Frequency [1/Å]')
             axs[i, 1].set_ylabel('Intensity')
+            # Clip axes for better view
+            axs[i, 1].set_xlim(-3,3)
             axs[i, 1].legend()
 
         plt.tight_layout()
-        # plt.savefig('Figures/glass.png')
+        # plt.savefig('Figures/glass_clipped.png')
         plt.show()
     # plot_mono()
     # plot_diatomic()
